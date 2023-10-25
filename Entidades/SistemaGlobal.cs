@@ -13,9 +13,26 @@ namespace EjercicioCorporacionParaguas
         {
             sucursales = new List<Sucursal>();
         }
-        public void CrearSucursal(string nombre)
+        public Sucursal GetSucursal(string Id)
         {
-            sucursales.Add(new Sucursal(nombre));
+            Sucursal sucursalRet;
+            bool esta = false;
+            int indice = 0;
+
+            while (!esta)
+            {
+                if (sucursales[indice].Id == Id) esta = true;
+                else indice++;
+            }
+
+            if (!esta) sucursalRet = null;
+            else sucursalRet = sucursales[indice];
+
+            return sucursalRet;
+        }
+        public void CrearSucursal(int cantCharCod = 3)
+        {
+            sucursales.Add(new Sucursal(cantCharCod));
         }
         public List<Sucursal> ListarSucursales() 
         {
@@ -47,7 +64,7 @@ namespace EjercicioCorporacionParaguas
             int indice = 0;
             while (!encontre)
             {
-                if (sucursales[indice].Nombre == nombre) encontre = true;
+                if (sucursales[indice].Id == nombre) encontre = true;
                 else indice++;
             }
             sucursales[indice].AutodestruirSucursal();

@@ -8,7 +8,7 @@ namespace EjercicioCorporacionParaguas
 {
     class Vacuna : Medicamento
     {
-        public Vacuna(string nombre, Designaciones designacion) : base(nombre, designacion){}
+        public Vacuna(string nombre, Designaciones designacion, int cantCharId = 3) : base(nombre, designacion, cantCharId){}
         public override void Destruir()
         {
             Id = "XXX";

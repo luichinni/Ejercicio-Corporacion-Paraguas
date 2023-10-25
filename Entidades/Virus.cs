@@ -10,7 +10,7 @@ namespace EjercicioCorporacionParaguas
     {
         public Virus(string nombre,Designaciones designacion,string IdVacuna) : base(nombre, designacion)
         {
-            Id = IdVacuna+Randomizador.RandAlfaNum(1);
+            Id = IdVacuna+Utilidades.RandAlfaNum(1);
         }
         public override void Destruir()
         {

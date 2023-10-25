@@ -10,10 +10,10 @@ namespace EjercicioCorporacionParaguas
     {
         public List<Vacuna> Vacunas { get; private set; }
         public List<Virus> Virus { get; private set; }
-        public string Nombre { get; private set; }
-        public Sucursal(string nombre)
+        public string Id { get; private set; }
+        public Sucursal(int cantidadCharCodigo = 3)
         {
-            Nombre = nombre;
+            Id = Utilidades.RandAlfaNum(cantidadCharCodigo);
             Vacunas = new List<Vacuna>();
             Virus = new List<Virus>();
         }

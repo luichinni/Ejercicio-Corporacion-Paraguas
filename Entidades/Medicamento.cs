@@ -11,15 +11,24 @@ namespace EjercicioCorporacionParaguas
         public string Nombre { get; protected set; }
         public string Id { get; protected set; }
         public Designaciones Designacion { get; protected set; }
-        protected int cantidadCharEnId;
 
-        public Medicamento(string nombre,Designaciones designacion)
+        public Medicamento(string nombre, Designaciones designacion)
         {
             Nombre = nombre;
             Designacion = designacion;
-            Id = Randomizador.RandAlfaNum(cantidadCharEnId);
+        }
+        public Medicamento(string nombre,Designaciones designacion, int cantCharId)
+        {
+            Nombre = nombre;
+            Designacion = designacion;
+            Id = Utilidades.RandAlfaNum(cantCharId);
         }
 
         public abstract void Destruir();
+
+        public override string ToString()
+        {
+            return $"Nombre: {Nombre} \tId: {Id} \tDesignación: {Designacion}";
+        }
     }
 }
