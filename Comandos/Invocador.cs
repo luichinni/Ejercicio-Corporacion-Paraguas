@@ -28,7 +28,7 @@ namespace EjercicioCorporacionParaguas
                 case "Autodestruir Sucursal":
                     cmdRet = new AutodestruirSucuCmd();
                     break;
-                case "Listar Todo":
+                case "Listar Sucursal":
                     cmdRet = new ListarCmd();
                     break;
             }

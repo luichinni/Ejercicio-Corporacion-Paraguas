@@ -16,6 +16,7 @@ string[] opcionesSucursal =
     "Destruir Tipo de Medicamento",
     "Autodestruir Sucursal",
     "Autodestruir Global",
+    "Listar Sucursal",
     "Listar Todo",
     "Salir"
 };
@@ -23,6 +24,7 @@ Menu menuSucursal = new Menu(opcionesSucursal);
 Invocador invocador = new Invocador();
 
 Menu seleccionSucursal = new Menu(codigos,"=== Seleccione una sucursal ==="); // antes de iniciar seleccionamos sucursal
+seleccionSucursal.Mostrar();
 Sucursal sucuActual = sistemaGlobal.GetSucursal(seleccionSucursal.GetSeleccion());
 
 bool fin = false;
@@ -35,6 +37,15 @@ while (!fin)
     else if (cmd == "Autodestruir Global")
     {
         sistemaGlobal.AutodestruirGlobal();
+    }
+    else if (cmd == "Listar Todo")
+    {
+        SucursalCmd cmmdo = invocador.GetComando("Listar Sucursal");
+        foreach (Sucursal s in listado)
+        {
+            Console.WriteLine($"Sucursal {s.Id}:");
+            cmmdo.Ejecutar(s);
+        }
     }
     else
     {

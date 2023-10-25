@@ -13,16 +13,16 @@ namespace EjercicioCorporacionParaguas
     }
     class ListarCmd : SucursalCmd
     {
-        public override string Nombre { get; } = "Listar Todo";
+        public override string Nombre { get; } = "Listar Sucursal";
         public override void Ejecutar(Sucursal s)
         {
             Console.WriteLine("Vacunas: ");
-            foreach(Vacuna v in s.Vacunas)
+            foreach (Vacuna v in s.Vacunas)
             {
                 Console.WriteLine(v);
             }
             Console.WriteLine("Virus: ");
-            foreach(Virus v in s.Virus)
+            foreach (Virus v in s.Virus)
             {
                 Console.WriteLine(v);
             }
@@ -45,7 +45,7 @@ namespace EjercicioCorporacionParaguas
             GenerarMenu().Mostrar();
 
             string seleccion = "";
-            while (!Utilidades.EsNumerico(seleccion) && int.Parse(seleccion) < 0 && int.Parse(seleccion) >= cant)
+            while (!Utilidades.EsNumerico(seleccion) || int.Parse(seleccion) < 0 || int.Parse(seleccion) >= cant)
             {
                 Console.WriteLine("Ingrese una opcion:");
                 seleccion = Console.ReadLine();
@@ -94,7 +94,7 @@ namespace EjercicioCorporacionParaguas
             GenerarMenu().Mostrar();
 
             string seleccion = "";
-            while (!Utilidades.EsNumerico(seleccion) && int.Parse(seleccion) < 0 && int.Parse(seleccion) >= cant)
+            while (!Utilidades.EsNumerico(seleccion) || int.Parse(seleccion) < 0 || int.Parse(seleccion) >= cant)
             {
                 Console.WriteLine("Ingrese una opcion:");
                 seleccion = Console.ReadLine();
