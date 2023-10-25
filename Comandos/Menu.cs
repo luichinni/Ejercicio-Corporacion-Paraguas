@@ -25,11 +25,14 @@ namespace EjercicioCorporacionParaguas
         }
         public string GetSeleccion()
         {
-            string seleccion = "";
-            while (!Utilidades.EsNumerico(seleccion) && int.Parse(seleccion) < 0 && int.Parse(seleccion) > opciones.Length - 1)
+            string seleccion = (opciones.Length + 1).ToString();
+            while (int.Parse(seleccion) < 0 || int.Parse(seleccion) > opciones.Length - 1)
             {
-                Console.WriteLine("Seleccione una opcion: ");
-                seleccion = Console.ReadLine();
+                while (!Utilidades.EsNumerico(seleccion))
+                {
+                    Console.WriteLine("Seleccione una opcion: ");
+                    seleccion = Console.ReadLine();
+                }
             }
             return opciones[int.Parse(seleccion)];
         }

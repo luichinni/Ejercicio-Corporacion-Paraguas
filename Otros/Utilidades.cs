@@ -55,7 +55,7 @@ namespace EjercicioCorporacionParaguas
             {
                 if (c >= '0' && c <= '9') cantNumeros++;
             }
-            return cantNumeros == (str.Length - 1);
+            return cantNumeros == (str.Length - 1) && str != "";
         }
     }
 }
