@@ -33,23 +33,21 @@ while (!fin)
 {
     menuSucursal.Mostrar();
     cmd = menuSucursal.GetSeleccion();
-    if (cmd == "Salir" ) fin = true;
-    else if (cmd == "Autodestruir Global")
+    switch (cmd)
     {
-        sistemaGlobal.AutodestruirGlobal();
-    }
-    else if (cmd == "Listar Todo")
-    {
-        SucursalCmd cmmdo = invocador.GetComando("Listar Sucursal");
-        foreach (Sucursal s in listado)
-        {
-            Console.WriteLine($"Sucursal {s.Id}:");
-            cmmdo.Ejecutar(s);
-        }
-    }
-    else
-    {
-        SucursalCmd comando = invocador.GetComando(cmd);
-        comando.Ejecutar(sucuActual);
+        case "Salir": fin = true; break;
+        case "Autodestruir Global": sistemaGlobal.AutodestruirGlobal(); break;
+        case "Listar Todo":
+            SucursalCmd cmmdo = invocador.GetComando("Listar Sucursal");
+            foreach (Sucursal s in listado)
+            {
+                Console.WriteLine($"Sucursal {s.Id}:");
+                cmmdo.Ejecutar(s);
+            }
+            break;
+        default:
+            SucursalCmd comando = invocador.GetComando(cmd);
+            comando.Ejecutar(sucuActual);
+            break;
     }
 }

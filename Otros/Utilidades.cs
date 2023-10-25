@@ -44,7 +44,7 @@ namespace EjercicioCorporacionParaguas
                 for (int i = 0;i < cantMax; i++)
                 {
                     s.AgregarVacuna(RandAlfaNum(6), (Designaciones)rnd.Next(0, Enum.GetValues(typeof(Designaciones)).Length));
-                    if(rnd.NextDouble() > 5.0) s.SintetizarVirus(); // 50% chance de crear un virus
+                    if(rnd.NextDouble() > 0.5) s.SintetizarVirus(); // 50% chance de crear un virus
                 }
             }
         }

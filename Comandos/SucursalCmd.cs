@@ -100,7 +100,7 @@ namespace EjercicioCorporacionParaguas
                 seleccion = Console.ReadLine();
             }
 
-            Vacuna nuevaVacuna = new Vacuna(nombre, (Designaciones)int.Parse(seleccion));
+            s.AgregarVacuna(nombre, (Designaciones)int.Parse(seleccion));
         }
         private Menu GenerarMenu()
         {

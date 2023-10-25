@@ -31,7 +31,7 @@ namespace EjercicioCorporacionParaguas
         {
             bool encontre = false;
             int indice = 0;
-            while (!encontre)
+            while (!encontre && indice < Vacunas.Count)
             {
                 if (Vacunas[indice].Id == Id) encontre = true;
                 else indice++;
