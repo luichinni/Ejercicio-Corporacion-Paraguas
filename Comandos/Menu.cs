@@ -10,14 +10,14 @@ namespace EjercicioCorporacionParaguas
     {
         private string[] opciones;
         private string cabecera = "=== Seleccione una opción ===";
-        public Menu(string[] opciones, string cabecera = "") 
+        public Menu(string[] opciones, string titulo = "") 
         {
             this.opciones = opciones;
-            if (cabecera != "") this.cabecera = cabecera;
+            if (titulo != "") cabecera = titulo;
         }
         public void Mostrar()
         {
-            Console.WriteLine("=== Seleccione una opción ===");
+            Console.WriteLine(cabecera);
             for(int i = 0; i < opciones.Length; i++)
             {
                 Console.WriteLine(i+".\t"+opciones[i]);
